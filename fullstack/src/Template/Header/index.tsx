@@ -22,7 +22,6 @@ export default function Header() {
                 {userLogin && <span className='text-gray-800 md:hidden'>Hi! {userLogin}</span>}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
                 className='md:hidden p-2 rounded-md'
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -32,10 +31,9 @@ export default function Header() {
 
             {/* Desktop Menu */}
             <div className='hidden md:flex items-center gap-4 mr-2'>
-                {/* Notification Bell (If you have notifications) */}
                 <div className='relative'>
                     <button className='focus:outline-none'>🛎️</button>
-                    {/* This is a notification count (you would replace 3 with the actual count) */}
+
                     <span className='absolute top-0 right-0 w-5 h-5 bg-red-500 text-white rounded-full text-xs flex items-center justify-center'>
                         3
                     </span>
@@ -102,7 +100,6 @@ export default function Header() {
             {isMobileMenuOpen && (
                 <div className='absolute top-16 left-0 w-full h-screen bg-white z-50 flex flex-col p-4'>
                     <span className='text-gray-800 mb-4'>Hi! {userLogin}</span>
-                    {/* Profile, Settings, and Sign out options similar to the desktop version */}
                     <button onClick={() => navigate('/profile')} className='py-2'>
                         Your Profile
                     </button>

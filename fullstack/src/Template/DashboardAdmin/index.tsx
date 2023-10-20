@@ -40,7 +40,6 @@ function DashboardAdmin() {
     const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
 
     useEffect(() => {
-        // Fetch the dashboard data when the component mounts
         fetch(`${VITE_API_ENDPOINT}/admin/dashboard`, {
             method: 'GET',
             headers: {
@@ -70,7 +69,6 @@ function DashboardAdmin() {
         <div className='p-4 sm:p-6 md:p-8 max-w-screen-xl mx-auto bg-gray-100'>
             <h2 className='text-2xl sm:text-3xl font-bold mb-4'>Admin Dashboard</h2>
 
-            {/* Display Total Counts */}
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6'>
                 <div className='bg-blue-200 p-4 sm:p-6 rounded-lg shadow-md'>
                     <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Total Users</h3>
@@ -86,7 +84,6 @@ function DashboardAdmin() {
                 </div>
             </div>
 
-            {/* Latest Users */}
             <div className='mb-6 overflow-x-auto'>
                 <h3 className='text-xl sm:text-2xl font-semibold mb-3'>Latest Users</h3>
                 <table className='min-w-full divide-y divide-gray-300 shadow-lg rounded-lg overflow-hidden'>
@@ -124,7 +121,6 @@ function DashboardAdmin() {
                 </table>
             </div>
 
-            {/* Latest Courses */}
             <div className='mb-6 overflow-x-auto'>
                 <h3 className='text-xl sm:text-2xl font-semibold mb-3'>Latest Users</h3>
                 <table className='min-w-full divide-y divide-gray-300 shadow-lg rounded-lg overflow-hidden'>
@@ -170,7 +166,6 @@ function DashboardAdmin() {
                 </table>
             </div>
 
-            {/* Latest Enrollments */}
             <div className='overflow-x-auto'>
                 <h3 className='text-xl sm:text-2xl font-semibold mb-3'>Latest Enrollments</h3>
                 <table className='min-w-full divide-y divide-gray-300 shadow-lg rounded-lg overflow-hidden'>

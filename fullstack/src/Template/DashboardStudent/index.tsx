@@ -23,13 +23,10 @@ interface StudentDashboardData {
     totalEnrolledCourses: number;
     enrolledCourses: {
         courseId: Course;
-    }[]; // Nested object based on the backend structure provided
+    }[];
     latestProgress: Progress[];
 }
 
-// Create a helper function to retrieve authToken
-
-// Use the helper function to get the token
 const authToken = localStorage.getItem('accessToken');
 const VITE_API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
@@ -37,7 +34,6 @@ function DashboardStudent() {
     const [dashboardData, setDashboardData] = useState<StudentDashboardData | null>(null);
 
     useEffect(() => {
-        // Fetch the student dashboard data when the component mounts
         fetch(`${VITE_API_ENDPOINT}/student/dashboard`, {
             method: 'GET',
             headers: {
@@ -67,17 +63,14 @@ function DashboardStudent() {
         <div className='p-4 sm:p-6 md:p-8 max-w-screen-xl mx-auto bg-gray-100'>
             <h2 className='text-2xl sm:text-3xl font-bold mb-4'>Student Dashboard</h2>
 
-            {/* Display Total Enrolled Courses */}
             <div className='bg-blue-200 p-4 sm:p-6 rounded-lg shadow-md mb-6'>
                 <h3 className='text-xl sm:text-2xl font-semibold mb-2'>Enrolled Courses</h3>
                 <p className='text-lg'>{dashboardData.totalEnrolledCourses}</p>
             </div>
 
-            {/* Enrolled Courses */}
             <div className='mb-6 overflow-x-auto'>
                 <h3 className='text-xl sm:text-2xl font-semibold mb-3'>Your Courses</h3>
                 <table className='min-w-full divide-y divide-gray-300 shadow-lg rounded-lg overflow-hidden'>
-                    {/* Table headers */}
                     <thead className='bg-gray-50'>
                         <tr>
                             <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
@@ -91,7 +84,7 @@ function DashboardStudent() {
                             </th>
                         </tr>
                     </thead>
-                    {/* Table body */}
+
                     <tbody className='bg-white divide-y divide-gray-200'>
                         {dashboardData.enrolledCourses.map(({ courseId }) => (
                             <tr key={courseId._id}>
@@ -112,7 +105,6 @@ function DashboardStudent() {
                 </table>
             </div>
 
-            {/* Latest Progress */}
             <div className='mb-6 overflow-x-auto'>
                 <h3 className='text-xl sm:text-2xl font-semibold mb-3'>Latest Progress</h3>
                 <table className='min-w-full divide-y divide-gray-300 shadow-lg rounded-lg overflow-hidden'>

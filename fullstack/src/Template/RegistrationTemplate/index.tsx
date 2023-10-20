@@ -43,7 +43,6 @@ const RegistrationTemplate: React.FC = () => {
             const response: RegistrationResponse = await fetching.json();
             console.log(response);
             if (response.error) {
-                // Change from response.errors to response.error
                 if (response.error === 'User already exists') {
                     setError('Email or Username is already in use. Please use a different one.');
                 } else {

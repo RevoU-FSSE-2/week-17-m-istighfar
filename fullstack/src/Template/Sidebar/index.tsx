@@ -20,7 +20,6 @@ export default function Sidebar() {
     const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
     return (
         <div>
-            {/* Mobile view */}
             <div className='flex md:hidden items-center justify-between'>
                 <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>🍔</button>
             </div>
@@ -32,7 +31,6 @@ export default function Sidebar() {
                 ></div>
             )}
 
-            {/* Sidebar content */}
             <div
                 className={`bg-slate-900 w-60 p-3 flex flex-col transform md:transform-none transition-transform duration-300 ${
                     !isSidebarOpen ? '-translate-x-full md:translate-x-0' : 'translate-x-0'
