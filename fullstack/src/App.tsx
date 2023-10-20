@@ -8,6 +8,8 @@ import DashboardStudentPage from './Pages/DashboardStudentPage';
 import UserPage from './Pages/UserPage';
 import VerifyEmail from './Pages/VerifyPage';
 import EmailVerification from './Pages/EmailVerification';
+import ResetPasswordPage from './Pages/ResetPasswordPage';
+import RequestPasswordResetPage from './Pages/RequestPasswordResetPage';
 
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { PublicLayout } from './Template';
@@ -69,6 +71,14 @@ function App() {
         {
             path: '/userpage',
             element: <UserPage />,
+        },
+        {
+            path: '/reset-password/:resetToken',
+            element: <ResetPasswordPage />,
+        },
+        {
+            path: '/request-password-reset',
+            element: <RequestPasswordResetPage />,
         },
     ]);
 

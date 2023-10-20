@@ -3,3 +3,5 @@ export { default as RegistrationForm } from './RegistrationForm';
 export { default as CategoryModal2 } from './CategoryModal2';
 export { default as ConfirmDeleteModal } from './ConfirmDeleteModal';
 export { default as CategoryTable } from './CategoryTable';
+export { default as RequestPasswordResetForm } from './RequestPasswordResetForm';
+export { default as ResetPasswordForm } from './ResetPasswordForm';

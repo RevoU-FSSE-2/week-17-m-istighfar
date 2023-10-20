@@ -34,7 +34,7 @@ const sendVerificationEmail = async (email, token) => {
 };
 
 const sendPasswordResetEmail = async (email, resetToken) => {
-    const resetLink = `http://localhost:3000/auth/reset-password/${resetToken}`;
+    const resetLink = `${FE_URL}/reset-password/${resetToken}`;
     const mailOptions = {
         from: 'daiqijb105@gmail.com',
         to: email,

@@ -13,7 +13,7 @@ interface Props {
     onSubmit: (values: LoginFormProps) => void;
 }
 
-const BASE_URL = process.env.BASE_URL;
+// const BASE_URL = process.env.BASE_URL;
 
 const LoginForm = ({ onSubmit }: Props) => {
     const handleSubmit = (values: LoginFormProps) => {
@@ -69,9 +69,12 @@ const LoginForm = ({ onSubmit }: Props) => {
                         </Label>
                     </div>
                 </div>
-                <a href='#' className={`text-sm font-medium text-primary-600 hover:underline`}>
+                <Link
+                    to='/request-password-reset'
+                    className={`text-sm font-medium text-primary-600 hover:underline`}
+                >
                     Forgot password?
-                </a>
+                </Link>
             </div>
             <Button
                 type={'submit'}
@@ -82,7 +85,7 @@ const LoginForm = ({ onSubmit }: Props) => {
             <Button
                 type='button'
                 className={`w-full mt-3 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center`}
-                onClick={() => (window.location.href = `${BASE_URL}/auth/google`)}
+                // onClick={() => (window.location.href = `${BASE_URL}/auth/google`)}
             >
                 Sign in with Google
             </Button>
