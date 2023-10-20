@@ -31,7 +31,7 @@ interface StudentDashboardData {
 
 // Use the helper function to get the token
 const authToken = localStorage.getItem('accessToken');
-const VITE_API_ENDPOINT = process.env.VITE_API_ENDPOINT;
+const VITE_API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 function DashboardStudent() {
     const [dashboardData, setDashboardData] = useState<StudentDashboardData | null>(null);
