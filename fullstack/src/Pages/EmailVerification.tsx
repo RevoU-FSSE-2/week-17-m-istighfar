@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-const VITE_API_ENDPOINT = process.env.VITE_API_ENDPOINT;
+const VITE_API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 const EmailVerification: React.FC = () => {
     const { token } = useParams();
+    console.log('API Endpoint:', VITE_API_ENDPOINT);
     console.log('Token extracted from URL:', token);
 
     const [verificationStatus, setVerificationStatus] = useState<string | null>(null);
@@ -13,6 +14,7 @@ const EmailVerification: React.FC = () => {
     useEffect(() => {
         const verifyEmailToken = async () => {
             try {
+                console.log(`Making request to: ${VITE_API_ENDPOINT}/auth/verify-email/${token}`);
                 const response = await fetch(`${VITE_API_ENDPOINT}/auth/verify-email/${token}`);
                 if (!response.ok) {
                     throw new Error('Network response was not okay');
@@ -27,13 +29,14 @@ const EmailVerification: React.FC = () => {
                     setVerificationStatus(data.message);
                     console.log('Success:', data.message);
 
-                    navigate('/login');
+                    setTimeout(() => {
+                        navigate('/login');
+                    }, 5000);
                 }
             } catch (error) {
                 setVerificationStatus('An error occurred during verification.');
             }
         };
-
         verifyEmailToken();
     }, [token]);
 

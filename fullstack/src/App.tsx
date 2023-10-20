@@ -58,7 +58,7 @@ function App() {
             element: <VerifyEmail />,
         },
         {
-            path: 'verify/:token',
+            path: '/verify-email/:token',
             element: <EmailVerification />,
         },
 
