@@ -4,6 +4,13 @@
 
 This is a simple e-learning platform consisting of a backend API built with Node.js and Express, and a frontend developed using React and Tailwind CSS. The platform focuses on providing different functionalities for users with different roles, such as Admin, Author, and Student. Features include user authentication and authorization, course management, learning path management, and a feature-rich dashboard for admins, authors, and students. The frontend of this application is deployed on Firebase.
 
+
+# Deliverables
+
+- Individual Assignment
+- Lighthouse Good
+- TWA APK
+
 ## Live Deployment
 
 - [Firebase Web App](https://week-17-tifar.web.app/)
